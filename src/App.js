@@ -1,10 +1,23 @@
 import "./App.css";
-import Student from "./components/Student";
+import Header from "./components/Header";
+import Movie from "./components/Movie";
+import movies from "./movie.json";
 
 function App() {
   return (
     <div className="App">
-      <Student />
+      <Header />
+      <div className="main">
+        {movies.map((ele) => {
+          return ( 
+          <Movie 
+            title={ele.Title} 
+            year={ele.Year} 
+            img={ele.Poster} 
+          />
+          )
+        })}
+      </div>
     </div>
   );
 }
